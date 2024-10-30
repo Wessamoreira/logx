@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogXpress - Plataforma de Serviços B2B</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS for Enhancements -->
+    <style>
+        /* Estilos Personalizados */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #ffffff;
+        }
+        .navbar .nav-link, .navbar-brand {
+            color: #0f657d !important;
+        }
+        .navbar-toggler {
+            border-color: #0f657d; /* Cor da borda do botão de menu */
+        }
+        .navbar-toggler .navbar-toggler-icon {
+            background-color: transparent; /* Remover fundo do ícone */
+        }
+        .custom-toggler .navbar-toggler-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #0f657d00; /* Cor do ícone */
+            border-radius: 4px;
+        }
+        .banner {
+            background: url('BANNER NV.png') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            color: #f8f3f3;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+        }
+        .btn-primary {
+            background-color: #0f657d;
+            border-color: #0f657d;
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+        }
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+        }
+        .modal-header, .modal-footer {
+            background-color: #0f657d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho fixo -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="pagina home.html">
+            <img src="LOGO NV.PNG" alt="Logo LogXpress" height="70">
+        </a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-ellipsis-v" style="color: #0f657d;"></i>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="pagina home.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="pagina home.html">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="pagina home.html">Contratos</a></li>
+                <li class="nav-item"><a class="nav-link" href="pagina home.html">Perfil</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner principal -->
+    <div class="banner">
+        <div class="banner-overlay">
+            <h1>Bem-vindo à LogXpress!</h1>
+            <p>Conectando empresas com prestadores de serviços de qualidade.</p>
+            <button class="btn btn-primary mt-3" onclick="window.location.href='#explorar'">Explorar</button>
+        </div>
+    </div>
+
+    <!-- Seções principais -->
+    <section class="container my-5" id="explorar">
+        <h2 class="text-center mb-4">Atividades Recentes</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="SOLICITAÇÃO RECENTE.png" class="card-img-top" alt="Solicitações Recentes">
+                    <div class="card-body">
+                        <h5 class="card-title">Solicitações Recentes</h5>
+                        <p class="card-text">Acompanhe as solicitações mais recentes em andamento.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalSolicitacoes">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="CONTRATOS ATIVOS.png" class="card-img-top" alt="Contratos Ativos">
+                    <div class="card-body">
+                        <h5 class="card-title">Contratos Ativos</h5>
+                        <p class="card-text">Confira os contratos que estão em andamento e seu status.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalContratos">Ver Contrato</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modais para Detalhes -->
+    <div class="modal fade" id="modalSolicitacoes" tabindex="-1" aria-labelledby="modalSolicitacoesLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSolicitacoesLabel">Solicitações Recentes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Informações detalhadas sobre as solicitações recentes...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalContratos" tabindex="-1" aria-labelledby="modalContratosLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalContratosLabel">Contratos Ativos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Informações detalhadas sobre os contratos ativos...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Serviços em Destaque -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Serviços em Destaque</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="TRANSPORTE LOGISTICO.png" class="card-img-top" alt="Serviço de Transporte">
+                    <div class="card-body">
+                        <h5 class="card-title">Transporte Logístico</h5>
+                        <p class="card-text">Serviços de transporte rápido e seguro para sua empresa.</p>
+                        <a href="transporte.html" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="ATENDIEMNTO AO CLIENTE.png" class="card-img-top" alt="Atendimento ao Cliente">
+                    <div class="card-body">
+                        <h5 class="card-title">Atendimento ao Cliente</h5>
+                        <p class="card-text">Suporte dedicado para atender suas necessidades.</p>
+                        <a href="atendimento.html" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="SERVICOS EMPRESARIAS.png" class="card-img-top" alt="Materiais de Escritório">
+                    <div class="card-body">
+                        <h5 class="card-title">Materiais de Escritório</h5>
+                        <p class="card-text">Fornecimento de materiais de escritório de qualidade.</p>
+                        <a href="materiais.html" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="py-4">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <h5>Sobre a LogXpress</h5>
+                <p>Plataforma inovadora de terceirização de serviços B2B.</p>
+            </div>
+            <div>
+                <h5>Links Úteis</h5>
+                <a href="#politica">Política de Privacidade</a><br>
+                <a href="#termos">Termos de Uso</a><br>
+                <a href="#suporte">Suporte</a>
+            </div>
+            <div>
+                <h5>Siga-nos</h5>
+                <a href="#linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
+                <a href="#facebook"><i class="fab fa-facebook"></i> Facebook</a><br>
+                <a href="#instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

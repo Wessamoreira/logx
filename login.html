@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogXpress - Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 90px; /* Ajusta a posição para o cabeçalho fixo */
+        }
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar .nav-link, .navbar-brand {
+            color: #0f657d !important;
+        }
+        .card {
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #0f657d;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #0f657d;
+            border-color: #0f657d;
+        }
+        .register-link {
+            color: #0f657d;
+            text-decoration: none;
+        }
+        .register-link:hover {
+            text-decoration: underline;
+        }
+        .forgot-password {
+            color: #0f657d;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .reset-password {
+            display: none; /* Inicialmente oculta a seção de recuperação de senha */
+            margin-top: 20px;
+            text-align: center; /* Centraliza o conteúdo */
+        }
+        .reset-password input {
+            margin-bottom: 10px;
+            width: 100%; /* Limita a largura dos inputs para ocupar 100% do card */
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho fixo com logo -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="pagina inicial.html">
+            <img src="LOGO NV.PNG" alt="Logo LogXpress" height="100">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="pagina inicial.html">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Cartão de Login -->
+<div class="card mt-5">
+    <div class="card-header">
+        Login - LogXpress
+    </div>
+    <div class="card-body">
+        <form action="processa_login.php" method="POST">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
+            </div>
+            <a href="pagina home.html" class="btn btn-primary btn-block">Entrar</a> <!-- Link estilizado como botão -->
+        </form>
+        <div class="text-center mt-3">
+            <div class="forgot-password" onclick="toggleResetPassword()">
+                <a>Esqueceu a senha?</a>
+            </div>
+            <p>Não possui uma conta? <a href="cadastro.html" class="register-link">Cadastre-se aqui</a>.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Seção de Recuperação de Senha -->
+    <div class="reset-password" id="resetPasswordSection">
+        <div class="card mt-3">
+            <div class="card-header">
+                Recuperação de Senha
+            </div>
+            <div class="card-body">
+                <p>Informe o CNPJ e o email para recuperar sua senha.</p>
+                <input type="text" id="cnpj" class="form-control" placeholder="CNPJ" required>
+                <input type="email" id="emailRecuperacao" class="form-control" placeholder="Email de recuperação" required>
+                <button onclick="sendResetEmail()" class="btn btn-primary btn-block">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Função para alternar a exibição da seção de recuperação de senha
+        function toggleResetPassword() {
+            const resetSection = document.getElementById('resetPasswordSection');
+            resetSection.style.display = resetSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Função simulada para envio de email de recuperação de senha
+        function sendResetEmail() {
+            const cnpj = document.getElementById('cnpj').value;
+            const emailRecuperacao = document.getElementById('emailRecuperacao').value;
+            if (cnpj && emailRecuperacao) {
+                alert(`Um email para recuperação de senha foi enviado para ${emailRecuperacao}.`);
+                // Aqui você pode adicionar lógica para enviar o email via backend
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+
+        // Função de login simulada
+        function login(event) {
+            event.preventDefault();
+            // Aqui você pode adicionar lógica para validar o login via backend
+            alert('Login realizado com sucesso.');
+            // Redireciona para a página inicial após o login
+            window.location.href = 'home.html'; // Altere para o nome correto da sua página home
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogXpress - Conectando Empresas e Profissionais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* Cabeçalho */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            z-index: 1000;
+            color: rgb(0, 0, 0);
+        }
+
+        .header img {
+            height: 100px;
+        }
+
+        .nav-links a {
+            margin-left: 1.5rem;
+            color: rgb(8, 129, 159);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #b7b0b0;
+            border-radius: 5px;
+        }
+
+        /* Banner Principal */
+        .banner {
+            background-image: url('BANNER NV.png');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            padding: 1rem;
+        }
+
+        .banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+        .button {
+            background-color: #ffa726;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff7043;
+        }
+
+        /* Seções */
+        .section {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about, .features {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about img, .features img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+
+        .text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .text h2 {
+            font-size: 2rem;
+            color: #0f657d;
+            margin-bottom: 1rem;
+        }
+
+        .text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Diferenciais */
+        .features {
+            justify-content: space-around;
+        }
+
+        .feature {
+            width: 280px;
+            padding: 1rem;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffa726;
+        }
+
+        .social-icons i {
+            font-size: 1.5rem;
+            color: #ffa726;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <img src="LOGO NV.PNG" alt="Logo da LogXpress" onerror="this.onerror=null; this.src='https://via.placeholder.com/50?text=Logo';">
+        <div class="nav-links">
+            <a href="#about">Sobre Nós</a>
+            <a href="#features">Diferenciais</a>
+            <a href="#contact">Suporte</a>
+            <a href="login.html" class="button">Login</a>
+            <a href="cadastro.html" class="button">Cadastro</a>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Conectando Empresas e Profissionais para o Sucesso</h1>
+            <p>Simplifique a gestão de processos terceirizados com uma plataforma que cuida de tudo — da documentação ao contrato final.</p>
+            <a href="#about" class="button">Conheça Mais</a>
+        </div>
+    </section>
+
+    <!-- Sobre a LogXpress -->
+    <section id="about" class="section about">
+        <img src="SERVICOS EMPRESARIAS.png" alt="Equipe corporativa">
+        <div class="text">
+            <h2>Sobre a LogXpress</h2>
+            <p>A LogXpress é uma plataforma inovadora dedicada a conectar empresas que necessitam de serviços terceirizados a prestadores qualificados, permitindo uma gestão segura e eficiente. Nossa missão é simplificar processos e garantir a formalização de contratos com segurança e confiança.</p>
+            <p>Com a LogXpress, empresas podem cadastrar-se como prestadores ou contratantes, acessar uma ampla gama de serviços, e contar com um sistema que facilita o preenchimento de documentos e o acompanhamento de contratos.</p>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="features" class="section">
+        <h2>Diferenciais da LogXpress</h2>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-file-alt"></i>
+                <h3>Integração de Documentação</h3>
+                <p>A LogXpress gerencia toda a documentação necessária para uma contratação segura e formalizada, sem complicação.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-lock"></i>
+                <h3>Segurança e Confiabilidade</h3>
+                <p>Processos realizados em um ambiente seguro, garantindo transparência e proteção para as empresas.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-star"></i>
+                <h3>Sistema de Avaliação</h3>
+                <p>Veja as avaliações de prestadores e escolha o parceiro ideal para a sua empresa com base em feedbacks reais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contact" class="footer">
+        <div class="footer-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Suporte Técnico</a>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    </footer>
+
+</body>
+</html>
